@@ -125,6 +125,12 @@ class Users
         return $record;
     }
 
+    public function suma($arg1, $arg2){
+        if ( ($arg1 + $arg2) > 10 ) {
+            return true;
+        }
+    }
+
     /**
      * Nos devuelve el karma del usuario en función del número de acciones realizadas.
      * - Entre 0 y 10 -> devuelve 1
