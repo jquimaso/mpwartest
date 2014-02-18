@@ -8,7 +8,7 @@ class UsersTest extends PHPUnit_Framework_TestCase
 
         public function testSuma(){
             self::$myUser = new Users();
-            $result = self::$myUser->suma(0,8);
+            $result = self::$myUser->suma(8,8);
             //var_dump($result);
 
                 $this->assertEquals(true, $result);
