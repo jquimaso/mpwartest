@@ -15,7 +15,7 @@ class UsersTest extends PHPUnit_Framework_TestCase
 
 
         }
-    /*      private static $myUser;
+    //     private static $myUser;
 
 
 
@@ -23,7 +23,7 @@ class UsersTest extends PHPUnit_Framework_TestCase
             public static function setUpBeforeClass() {
                 self::$myUser= new Users();
                 self::$myUser->bbdd();
-                self::$myUser->initializeTabl);
+                self::$myUser->initializeTable();
             }
 
             /*
