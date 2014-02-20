@@ -8,7 +8,7 @@ class Users
      */
 
     private $errors = array();
-    public $conexion ;
+    global $conexion ;
 
 
     public function bbdd(){
