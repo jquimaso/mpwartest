@@ -23,26 +23,26 @@ class UsersTest extends PHPUnit_Framework_TestCase
         self::$myUser->initializeTable();
     }
 
-//
-//    /**
-//     * @dataProvider provider
-//     */
-//    public function testInsertUser($user, $password){
-//
-//        $result = self::$myUser->insertUser($user, $password);
-//        //var_dump($result);
-//        $this->assertSame(true, $result);
-//    }
-//
-//    public function provider() {
-//        return array(
-//                        array('jquimaso', '123456'),
-//                        array('jcucala', '654321'),
-//                        array('xborja', '000000'),
-//                        array('pros', '123123')
-//                    );
-//    }
-//
+
+    /**
+     * @dataProvider provider
+     */
+    public function testInsertUser($user, $password){
+
+        $result = self::$myUser->insertUser($user, $password);
+        //var_dump($result);
+        $this->assertSame(true, $result);
+    }
+
+    public function provider() {
+        return array(
+                        array('jquimaso', '123456'),
+                        array('jcucala', '654321'),
+                        array('xborja', '000000'),
+                        array('pros', '123123')
+                    );
+    }
+
 //
 //    public function testGetUserData(){
 //        $value = 1;
