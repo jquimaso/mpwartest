@@ -13,15 +13,15 @@ class Users
 
     public function bbdd(){
 
-        $ls_host = 'localhost';
-        $ls_database = 'world';
-        $ls_user = 'root';
-        $ls_psw = '';
+    $ls_host = 'localhost';
+    $ls_database = 'world';
+    $ls_user = 'root';
+    $ls_psw = '';
 
-        $this->conexion = new \PDO('mysql:host=' . $ls_host. '; dbname='. $ls_database  , $ls_user, $ls_psw);
-        $this->conexion->setAttribute( \PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC );
+    $this->conexion = new \PDO('mysql:host=' . $ls_host. '; dbname='. $ls_database  , $ls_user, $ls_psw);
+    $this->conexion->setAttribute( \PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC );
 
-    }
+}
 
 
     public function createTable(){
