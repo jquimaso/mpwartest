@@ -81,6 +81,7 @@ class Users
     public function insertUser( $name, $password )
     {
        $sql = "insert into user (user_name, password) values (:name, :password)";
+
        $mysql = $this->conexion->prepare($sql);
        $result = $mysql->execute(array(
                                          ':name'=>$name,
