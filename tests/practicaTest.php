@@ -4,38 +4,34 @@ include_once __DIR__ . '/../src/practica.php';
 
 class UsersTest extends PHPUnit_Framework_TestCase
 {
-     private static $myUser;
+    private static $myUser;
 
-        public function testSuma(){
-            self::$myUser = new Users();
-            $result = self::$myUser->suma(8,8);
-            //var_dump($result);
+    public function testSuma(){
+        self::$myUser = new Users();
+        $result = self::$myUser->suma(8,8);
+        //var_dump($result);
 
-                $this->assertEquals(true, $result);
-
-
-        }
-    //     private static $myUser;
+            $this->assertEquals(true, $result);
 
 
+    }
 
+    public static function setUpBeforeClass() {
+        self::$myUser= new Users();
+        self::$myUser->bbdd();
+        self::$myUser->initializeTable();
+    }
 
-            public static function setUpBeforeClass() {
-                self::$myUser= new Users();
-                self::$myUser->bbdd();
-                self::$myUser->initializeTable();
-            }
+    /**
+     * @dataProvider provider
+     */
+    public function testInsertUser($user, $password){
 
-            /*
-             * @dataProvider provider
+        $result = self::$myUser->insertUser($user, $password);
+        //var_dump($result);
+        $this->assertSame(true, $result);
+    }
 
-            public function testInsertUser($user, $password){
-
-                $result = self::$myUser->insertUser($user, $password);
-                //var_dump($result);
-                $this->assertSame(true, $result);
-            }*/
-/*
     public function provider() {
         return array(
                         array('jquimaso', '123456'),
@@ -89,8 +85,8 @@ class UsersTest extends PHPUnit_Framework_TestCase
         }
     }
 
-*/
- /*
+
+
     public function testGetUserKarma()
     {
      /*   Nos devuelve el karma del usuario en función del número de acciones realizadas.
@@ -98,7 +94,7 @@ class UsersTest extends PHPUnit_Framework_TestCase
       * - Mayor que 10 y menor 100 -> devuelve 2
       * - Mayor de 100 y menor de 500 -> devuelve 3
       * - Mayor de 500 -> devuelve número de acciones entre 100  */
-/*
+
         //todo al loro!!!  con esta linea nos salta el exception pero no se si es correcto
         //todo $id = 44;
         $id = 1;
@@ -134,7 +130,6 @@ class UsersTest extends PHPUnit_Framework_TestCase
     public static function tearDownAfterClass() {
         self::$myUser->closebbdd();
     }
-*/
 
 
 }
