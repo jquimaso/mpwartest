@@ -23,6 +23,19 @@ class Users
 
     }
 
+
+    public function createTable(){
+        $sql = "CREATE TABLE user (
+                                    id int(11) NOT NULL AUTO_INCREMENT,
+                                    user_name varchar(255) NOT NULL,
+                                    password varchar(2552) NOT NULL,
+                                    num_actions int(11) NOT NULL,
+                                    PRIMARY KEY (id)
+                                    ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1";
+        $mysql = $this->conexion->prepare($sql);
+        $mysql->execute( array() );
+    }
+
     public function initializeTable(){
         $sql = "truncate table user";
         $mysql = $this->conexion->prepare($sql);

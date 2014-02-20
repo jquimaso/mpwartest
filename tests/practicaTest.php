@@ -19,9 +19,8 @@ class UsersTest extends PHPUnit_Framework_TestCase
     public static function setUpBeforeClass() {
         self::$myUser= new Users();
         self::$myUser->bbdd();
+        self::$myUser->createTable();
         self::$myUser->initializeTable();
-        $hola = 'holaaaa';
-        var_dump($hola);
     }
 
 //
