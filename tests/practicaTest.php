@@ -28,7 +28,8 @@ class UsersTest extends PHPUnit_Framework_TestCase
      * @dataProvider provider
      */
     public function testInsertUser($user, $password){
-
+        self::$myUser= new Users();
+        self::$myUser->bbdd();
         $result = self::$myUser->insertUser($user, $password);
         //var_dump($result);
         $this->assertSame(true, $result);
