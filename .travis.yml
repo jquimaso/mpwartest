@@ -6,3 +6,6 @@ php:
 
 env:
  - DB=mysql
+
+before_script:
+ - mysql -e "create database IF NOT EXISTS world;" -uroot -p; fi
